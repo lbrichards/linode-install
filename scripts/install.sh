@@ -35,7 +35,7 @@ sudo apt-get install -y curl ca-certificates gnupg git build-essential dkms linu
 # Check/Install CUDA Toolkit
 echo "[2/9] Checking CUDA toolkit..."
 source /etc/profile.d/cuda.sh 2>/dev/null || true
-if \! command -v nvcc &> /dev/null; then
+if ! command -v nvcc &> /dev/null; then
     echo "Installing CUDA toolkit..."
     
     sudo mkdir -p /etc/apt/keyrings
@@ -47,7 +47,7 @@ if \! command -v nvcc &> /dev/null; then
     tmux new-session -d -s cuda_install "sudo apt-get update && sudo apt-get install -y cuda-toolkit-12-8 && echo DONE > /tmp/cuda_done"
     
     echo "Waiting for CUDA installation..."
-    while \! [ -f /tmp/cuda_done ]; do
+    while ! [ -f /tmp/cuda_done ]; do
         sleep 10
         echo -n "."
     done
@@ -73,7 +73,7 @@ export TORCH_CUDA_ARCH_LIST="8.9"
 
 # Create virtual environment
 echo "[3/9] Setting up Python virtual environment..."
-if [ \! -d /opt/venv ]; then
+if [ ! -d /opt/venv ]; then
     python3 -m venv /opt/venv || error_exit "Failed to create virtual environment"
 fi
 source /opt/venv/bin/activate
@@ -85,7 +85,7 @@ pip install "torch==${TORCH_VERSION}" --index-url "${TORCH_INDEX}" || error_exit
 
 # Install HRM requirements
 echo "[5/9] Installing HRM dependencies..."
-if [ \! -f /opt/HRM/requirements.txt ]; then
+if [ ! -f /opt/HRM/requirements.txt ]; then
     error_exit "/opt/HRM/requirements.txt not found"
 fi
 pip install -r /opt/HRM/requirements.txt || error_exit "Failed to install requirements"
