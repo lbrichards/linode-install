@@ -102,113 +102,19 @@ echo "[7/9] Installing flash_attn..."
 pip install --no-deps "${FLASH_ATTN_WHEEL}" || error_exit "Failed to install flash_attn"
 
 # Generate dataset (optional, for full testing)
-echo "[8/9] Generating Sudoku dataset..."
-cd /opt/HRM || error_exit "Failed to change to HRM directory"
-
-if [ \! -d "data/sudoku-extreme-1k-aug-1000" ]; then
-    echo "Building dataset (1-2 minutes)..."
-    tmux kill-session -t dataset_build 2>/dev/null || true
-    tmux new-session -d -s dataset_build "source /opt/venv/bin/activate && python dataset/build_sudoku_dataset.py --output-dir data/sudoku-extreme-1k-aug-1000 --subsample-size 1000 --num-aug 1000"
-    
-    while tmux has-session -t dataset_build 2>/dev/null; do
-        sleep 5
-        echo -n "."
-    done
-    echo ""
-    
-    [ -d "data/sudoku-extreme-1k-aug-1000" ] || error_exit "Dataset generation failed"
-    echo "✓ Dataset generated"
-else
-    echo "✓ Dataset exists"
-fi
-
-# Fast health check instead of long demo
-echo "[9/9] Running health check (2 seconds)..."
-
-# Create healthcheck script
-cat > /opt/HRM/healthcheck.py << 'PY'
-#\!/usr/bin/env python3
-import os, sys, importlib
-import torch
-import torch.nn.functional as F
-
-def fail(msg, code=1):
-    print(f"❌ {msg}")
-    sys.exit(code)
-
-def ok(msg):
-    print(f"✅ {msg}")
-
-# CUDA + GPU present
-if not torch.cuda.is_available():
-    fail("CUDA is not available")
-
-dev = torch.device("cuda:0")
-print(f"GPU: {torch.cuda.get_device_name(0)}")
-print(f"torch: {torch.__version__} | cuda: {torch.version.cuda}")
-
-# Tiny GPU op
-a = torch.randn(64, 64, device=dev, dtype=torch.float16)
-b = torch.randn(64, 64, device=dev, dtype=torch.float16)
-c = a @ b
-torch.cuda.synchronize()
-ok("Basic CUDA matmul")
-
-# FlashAttention test
-try:
-    from flash_attn.flash_attn_interface import flash_attn_qkvpacked_func
-except Exception as e:
-    fail(f"flash_attn import failed: {e}")
-
-B, S, H, D = 1, 8, 4, 32
-qkv = torch.randn(B, S, 3, H, D, device=dev, dtype=torch.float16)
-out_fa = flash_attn_qkvpacked_func(qkv, dropout_p=0.0, causal=False)
-
-q = qkv[:, :, 0].permute(0, 2, 1, 3)
-k = qkv[:, :, 1].permute(0, 2, 1, 3)
-v = qkv[:, :, 2].permute(0, 2, 1, 3)
-out_ref = F.scaled_dot_product_attention(q, k, v, dropout_p=0.0, is_causal=False)
-out_ref = out_ref.permute(0, 2, 1, 3).contiguous()
-
-max_diff = (out_fa.float() - out_ref.float()).abs().max().item()
-if max_diff >= 2e-2:
-    fail(f"flash_attn mismatch: {max_diff:.3e}")
-ok(f"flash_attn verified (diff={max_diff:.3e})")
-
-# adam_atan2 check
-try:
-    import adam_atan2
-    import adam_atan2_backend
-    ok("adam_atan2 backend")
-except Exception as e:
-    fail(f"adam_atan2 failed: {e}")
-
-print("\n🎉 HRM Ready\!")
-sys.exit(0)
-PY
 
 # Run health check
-python /opt/HRM/healthcheck.py 2>&1 | tee /var/log/hrm_healthcheck.log
-HC_RC=${PIPESTATUS[0]}
+echo "[8/8] Running health check..."
+cd /opt/linode-install/scripts || error_exit "Failed to change to scripts directory"
+python3 healthcheck.py || error_exit "Health check failed"
 
-if [ $HC_RC -ne 0 ]; then
-    echo ""
-    echo "\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!"
-    echo "Health check FAILED (exit code: $HC_RC)"
-    echo "See /var/log/hrm_healthcheck.log"
-    echo "\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!"
-    exit $HC_RC
-fi
-
-echo ""
 echo "========================================"
-echo "✓✓✓ INSTALLATION SUCCESSFUL ✓✓✓"
+echo "Installation completed successfully\!"
 echo "========================================"
 echo ""
-echo "HRM is ready\! To use:"
-echo "  source /opt/venv/bin/activate"
-echo "  cd /opt/HRM"
-echo "  WANDB_MODE=offline python pretrain.py [config]"
+echo "HRM has been installed with:"
+echo "  - PyTorch 2.5 with CUDA 12.4"
+echo "  - adam_atan2 C++ extension"
+echo "  - flash_attn 2.8.2"
 echo ""
-echo "Health check passed in seconds\!"
-echo "Log: /var/log/hrm_healthcheck.log"
+echo "Health check passed successfully."
