@@ -168,3 +168,26 @@ Developed for automated deployment of HRM (Hierarchical Reasoning Model) on clou
 ## License
 
 See LICENSE file in repository.
+
+## Fast Health Check
+
+The installer now includes a rapid health check that verifies all critical components in ~2 seconds:
+
+```bash
+cd /opt/linode-install/scripts
+source /opt/venv/bin/activate
+python healthcheck.py
+```
+
+The health check verifies:
+- CUDA availability and GPU access
+- Flash Attention kernel execution
+- Comparison with PyTorch reference implementation
+- adam_atan2 backend module loading
+
+This replaces the previous 10-minute training demo with instant verification, making the installer much faster and suitable for CI/CD pipelines.
+
+### Exit Codes
+- 0: All checks passed
+- 1: Critical component failure
+- 2: Numerical mismatch in attention computation
