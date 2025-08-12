@@ -1,0 +1,236 @@
+========================================
+Starting Installation (v4)
+========================================
+Creating Python virtual environment...
+Virtual environment already exists at /opt/venv
+Installing HRM Python dependencies...
+Requirement already satisfied: pip in /opt/venv/lib/python3.10/site-packages (25.2)
+Collecting torch (from -r /opt/HRM/requirements.txt (line 1))
+  Using cached torch-2.8.0-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (30 kB)
+Collecting adam-atan2 (from -r /opt/HRM/requirements.txt (line 2))
+  Using cached adam_atan2-0.0.3-py3-none-any.whl
+Collecting einops (from -r /opt/HRM/requirements.txt (line 3))
+  Using cached einops-0.8.1-py3-none-any.whl.metadata (13 kB)
+Collecting tqdm (from -r /opt/HRM/requirements.txt (line 4))
+  Using cached tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting coolname (from -r /opt/HRM/requirements.txt (line 5))
+  Using cached coolname-2.2.0-py2.py3-none-any.whl.metadata (6.2 kB)
+Collecting pydantic (from -r /opt/HRM/requirements.txt (line 6))
+  Using cached pydantic-2.11.7-py3-none-any.whl.metadata (67 kB)
+Collecting argdantic (from -r /opt/HRM/requirements.txt (line 7))
+  Using cached argdantic-1.3.3-py2.py3-none-any.whl.metadata (7.2 kB)
+Collecting wandb (from -r /opt/HRM/requirements.txt (line 8))
+  Using cached wandb-0.21.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+Collecting omegaconf (from -r /opt/HRM/requirements.txt (line 9))
+  Using cached omegaconf-2.3.0-py3-none-any.whl.metadata (3.9 kB)
+Collecting hydra-core (from -r /opt/HRM/requirements.txt (line 10))
+  Using cached hydra_core-1.3.2-py3-none-any.whl.metadata (5.5 kB)
+Collecting huggingface_hub (from -r /opt/HRM/requirements.txt (line 11))
+  Using cached huggingface_hub-0.34.4-py3-none-any.whl.metadata (14 kB)
+Collecting filelock (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting typing-extensions>=4.10.0 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting sympy>=1.13.3 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached networkx-3.4.2-py3-none-any.whl.metadata (6.3 kB)
+Collecting jinja2 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached fsspec-2025.7.0-py3-none-any.whl.metadata (12 kB)
+Collecting nvidia-cuda-nvrtc-cu12==12.8.93 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime-cu12==12.8.90 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti-cu12==12.8.90 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cudnn-cu12==9.10.2.21 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cublas-cu12==12.8.4.1 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft-cu12==11.3.3.83 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand-cu12==10.3.9.90 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver-cu12==11.7.3.90 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse-cu12==12.5.8.93 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparselt-cu12==0.7.1 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl.metadata (7.0 kB)
+Collecting nvidia-nccl-cu12==2.27.3 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_nccl_cu12-2.27.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvtx-cu12==12.8.90 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink-cu12==12.8.93 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufile-cu12==1.13.1.3 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting triton==3.4.0 (from torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached triton-3.4.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Requirement already satisfied: setuptools>=40.8.0 in /opt/venv/lib/python3.10/site-packages (from triton==3.4.0->torch->-r /opt/HRM/requirements.txt (line 1)) (59.6.0)
+Collecting annotated-types>=0.6.0 (from pydantic->-r /opt/HRM/requirements.txt (line 6))
+  Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.33.2 (from pydantic->-r /opt/HRM/requirements.txt (line 6))
+  Using cached pydantic_core-2.33.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting typing-inspection>=0.4.0 (from pydantic->-r /opt/HRM/requirements.txt (line 6))
+  Using cached typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting pydantic-settings<3,>=2.4.0 (from argdantic->-r /opt/HRM/requirements.txt (line 7))
+  Using cached pydantic_settings-2.10.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting python-dotenv>=0.21.0 (from pydantic-settings<3,>=2.4.0->argdantic->-r /opt/HRM/requirements.txt (line 7))
+  Using cached python_dotenv-1.1.1-py3-none-any.whl.metadata (24 kB)
+Collecting click!=8.0.0,>=7.1 (from wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+Collecting gitpython!=3.1.29,>=1.0.0 (from wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached gitpython-3.1.45-py3-none-any.whl.metadata (13 kB)
+Collecting packaging (from wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting platformdirs (from wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached platformdirs-4.3.8-py3-none-any.whl.metadata (12 kB)
+Collecting protobuf!=4.21.0,!=5.28.0,<7,>=3.19.0 (from wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached protobuf-6.31.1-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Collecting pyyaml (from wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting requests<3,>=2.0.0 (from wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+Collecting sentry-sdk>=2.0.0 (from wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached sentry_sdk-2.34.1-py2.py3-none-any.whl.metadata (10 kB)
+Collecting charset_normalizer<4,>=2 (from requests<3,>=2.0.0->wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached charset_normalizer-3.4.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests<3,>=2.0.0->wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests<3,>=2.0.0->wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests<3,>=2.0.0->wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+Collecting antlr4-python3-runtime==4.9.* (from omegaconf->-r /opt/HRM/requirements.txt (line 9))
+  Using cached antlr4_python3_runtime-4.9.3-py3-none-any.whl
+Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface_hub->-r /opt/HRM/requirements.txt (line 11))
+  Using cached hf_xet-1.1.7-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (703 bytes)
+Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.29,>=1.0.0->wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb->-r /opt/HRM/requirements.txt (line 8))
+  Using cached smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch->-r /opt/HRM/requirements.txt (line 1))
+  Using cached MarkupSafe-3.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Using cached torch-2.8.0-cp310-cp310-manylinux_2_28_x86_64.whl (888.0 MB)
+Using cached nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl (594.3 MB)
+Using cached nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (10.2 MB)
+Using cached nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (88.0 MB)
+Using cached nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (954 kB)
+Using cached nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl (706.8 MB)
+Using cached nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (193.1 MB)
+Using cached nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+Using cached nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl (63.6 MB)
+Using cached nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl (267.5 MB)
+Using cached nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (288.2 MB)
+Using cached nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl (287.2 MB)
+Using cached nvidia_nccl_cu12-2.27.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (322.4 MB)
+Using cached nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (39.3 MB)
+Using cached nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (89 kB)
+Using cached triton-3.4.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (155.4 MB)
+Using cached einops-0.8.1-py3-none-any.whl (64 kB)
+Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+Using cached coolname-2.2.0-py2.py3-none-any.whl (37 kB)
+Using cached pydantic-2.11.7-py3-none-any.whl (444 kB)
+Using cached pydantic_core-2.33.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+Using cached argdantic-1.3.3-py2.py3-none-any.whl (26 kB)
+Using cached pydantic_settings-2.10.1-py3-none-any.whl (45 kB)
+Using cached wandb-0.21.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (22.4 MB)
+Using cached protobuf-6.31.1-cp39-abi3-manylinux2014_x86_64.whl (321 kB)
+Using cached requests-2.32.4-py3-none-any.whl (64 kB)
+Using cached charset_normalizer-3.4.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (152 kB)
+Using cached idna-3.10-py3-none-any.whl (70 kB)
+Using cached typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
+Using cached omegaconf-2.3.0-py3-none-any.whl (79 kB)
+Using cached hydra_core-1.3.2-py3-none-any.whl (154 kB)
+Using cached huggingface_hub-0.34.4-py3-none-any.whl (561 kB)
+Using cached hf_xet-1.1.7-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Using cached certifi-2025.8.3-py3-none-any.whl (161 kB)
+Using cached click-8.2.1-py3-none-any.whl (102 kB)
+Using cached fsspec-2025.7.0-py3-none-any.whl (199 kB)
+Using cached gitpython-3.1.45-py3-none-any.whl (208 kB)
+Using cached gitdb-4.0.12-py3-none-any.whl (62 kB)
+Using cached smmap-5.0.2-py3-none-any.whl (24 kB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached python_dotenv-1.1.1-py3-none-any.whl (20 kB)
+Using cached PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (751 kB)
+Using cached sentry_sdk-2.34.1-py2.py3-none-any.whl (357 kB)
+Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
+Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+Using cached typing_inspection-0.4.1-py3-none-any.whl (14 kB)
+Using cached filelock-3.18.0-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached MarkupSafe-3.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+Using cached networkx-3.4.2-py3-none-any.whl (1.7 MB)
+Using cached platformdirs-4.3.8-py3-none-any.whl (18 kB)
+Installing collected packages: nvidia-cusparselt-cu12, mpmath, coolname, antlr4-python3-runtime, adam-atan2, urllib3, typing-extensions, triton, tqdm, sympy, smmap, pyyaml, python-dotenv, protobuf, platformdirs, packaging, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, networkx, MarkupSafe, idna, hf-xet, fsspec, filelock, einops, click, charset_normalizer, certifi, annotated-types, typing-inspection, sentry-sdk, requests, pydantic-core, omegaconf, nvidia-cusparse-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, jinja2, gitdb, pydantic, nvidia-cusolver-cu12, hydra-core, huggingface_hub, gitpython, wandb, torch, pydantic-settings, argdantic
+
+Successfully installed MarkupSafe-3.0.2 adam-atan2-0.0.3 annotated-types-0.7.0 antlr4-python3-runtime-4.9.3 argdantic-1.3.3 certifi-2025.8.3 charset_normalizer-3.4.3 click-8.2.1 coolname-2.2.0 einops-0.8.1 filelock-3.18.0 fsspec-2025.7.0 gitdb-4.0.12 gitpython-3.1.45 hf-xet-1.1.7 huggingface_hub-0.34.4 hydra-core-1.3.2 idna-3.10 jinja2-3.1.6 mpmath-1.3.0 networkx-3.4.2 nvidia-cublas-cu12-12.8.4.1 nvidia-cuda-cupti-cu12-12.8.90 nvidia-cuda-nvrtc-cu12-12.8.93 nvidia-cuda-runtime-cu12-12.8.90 nvidia-cudnn-cu12-9.10.2.21 nvidia-cufft-cu12-11.3.3.83 nvidia-cufile-cu12-1.13.1.3 nvidia-curand-cu12-10.3.9.90 nvidia-cusolver-cu12-11.7.3.90 nvidia-cusparse-cu12-12.5.8.93 nvidia-cusparselt-cu12-0.7.1 nvidia-nccl-cu12-2.27.3 nvidia-nvjitlink-cu12-12.8.93 nvidia-nvtx-cu12-12.8.90 omegaconf-2.3.0 packaging-25.0 platformdirs-4.3.8 protobuf-6.31.1 pydantic-2.11.7 pydantic-core-2.33.2 pydantic-settings-2.10.1 python-dotenv-1.1.1 pyyaml-6.0.2 requests-2.32.4 sentry-sdk-2.34.1 smmap-5.0.2 sympy-1.14.0 torch-2.8.0 tqdm-4.67.1 triton-3.4.0 typing-extensions-4.14.1 typing-inspection-0.4.1 urllib3-2.5.0 wandb-0.21.1
+Collecting numpy
+  Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 156.5 MB/s  0:00:00
+Installing collected packages: numpy
+Successfully installed numpy-2.2.6
+HRM dependencies installed
+========================================
+Generating Sudoku dataset...
+========================================
+Building Sudoku dataset (1000 examples)...
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 2/1000 [00:00<01:05, 15.20it/s]  0%|          | 4/1000 [00:00<01:04, 15.39it/s]  1%|          | 6/1000 [00:00<01:04, 15.44it/s]  1%|          | 8/1000 [00:00<01:04, 15.39it/s]  1%|          | 10/1000 [00:00<01:04, 15.43it/s]  1%|          | 12/1000 [00:00<01:04, 15.43it/s]  1%|▏         | 14/1000 [00:00<01:03, 15.46it/s]  2%|▏         | 16/1000 [00:01<01:03, 15.41it/s]  2%|▏         | 18/1000 [00:01<01:03, 15.42it/s]  2%|▏         | 20/1000 [00:01<01:03, 15.46it/s]  2%|▏         | 22/1000 [00:01<01:03, 15.41it/s]  2%|▏         | 24/1000 [00:01<01:03, 15.45it/s]  3%|▎         | 26/1000 [00:01<01:02, 15.49it/s]  3%|▎         | 28/1000 [00:01<01:02, 15.49it/s]  3%|▎         | 30/1000 [00:01<01:03, 15.36it/s]  3%|▎         | 32/1000 [00:02<01:02, 15.41it/s]  3%|▎         | 34/1000 [00:02<01:02, 15.43it/s]  4%|▎         | 36/1000 [00:02<01:02, 15.45it/s]  4%|▍         | 38/1000 [00:02<01:02, 15.36it/s]  4%|▍         | 40/1000 [00:02<01:02, 15.35it/s]  4%|▍         | 42/1000 [00:02<01:02, 15.34it/s]  4%|▍         | 44/1000 [00:02<01:02, 15.29it/s]  5%|▍         | 46/1000 [00:02<01:02, 15.36it/s]  5%|▍         | 48/1000 [00:03<01:01, 15.39it/s]  5%|▌         | 50/1000 [00:03<01:01, 15.37it/s]  5%|▌         | 52/1000 [00:03<01:02, 15.28it/s]  5%|▌         | 54/1000 [00:03<01:01, 15.33it/s]  6%|▌         | 56/1000 [00:03<01:01, 15.34it/s]  6%|▌         | 58/1000 [00:03<01:01, 15.38it/s]  6%|▌         | 60/1000 [00:03<01:01, 15.32it/s]  6%|▌         | 62/1000 [00:04<01:01, 15.32it/s]  6%|▋         | 64/1000 [00:04<01:00, 15.37it/s]  7%|▋         | 66/1000 [00:04<01:00, 15.41it/s]  7%|▋         | 68/1000 [00:04<01:00, 15.35it/s]  7%|▋         | 70/1000 [00:04<01:00, 15.39it/s]  7%|▋         | 72/1000 [00:04<01:00, 15.31it/s]  7%|▋         | 74/1000 [00:04<01:00, 15.28it/s]  8%|▊         | 76/1000 [00:04<01:00, 15.32it/s]  8%|▊         | 78/1000 [00:05<01:00, 15.36it/s]  8%|▊         | 80/1000 [00:05<00:59, 15.35it/s]  8%|▊         | 82/1000 [00:05<01:00, 15.29it/s]  8%|▊         | 84/1000 [00:05<00:59, 15.32it/s]  9%|▊         | 86/1000 [00:05<00:59, 15.38it/s]  9%|▉         | 88/1000 [00:05<00:59, 15.42it/s]  9%|▉         | 90/1000 [00:05<00:59, 15.28it/s]  9%|▉         | 92/1000 [00:05<00:59, 15.34it/s]  9%|▉         | 94/1000 [00:06<00:58, 15.39it/s] 10%|▉         | 96/1000 [00:06<00:58, 15.43it/s] 10%|▉         | 98/1000 [00:06<00:58, 15.39it/s] 10%|█         | 100/1000 [00:06<00:58, 15.43it/s] 10%|█         | 102/1000 [00:06<00:58, 15.40it/s] 10%|█         | 104/1000 [00:06<00:58, 15.36it/s] 11%|█         | 106/1000 [00:06<00:57, 15.42it/s] 11%|█         | 108/1000 [00:07<00:57, 15.44it/s] 11%|█         | 110/1000 [00:07<00:57, 15.46it/s] 11%|█         | 112/1000 [00:07<00:57, 15.39it/s] 11%|█▏        | 114/1000 [00:07<00:57, 15.36it/s] 12%|█▏        | 116/1000 [00:07<00:57, 15.39it/s] 12%|█▏        | 118/1000 [00:07<00:57, 15.42it/s] 12%|█▏        | 120/1000 [00:07<00:57, 15.37it/s] 12%|█▏        | 122/1000 [00:07<00:57, 15.40it/s] 12%|█▏        | 124/1000 [00:08<00:56, 15.42it/s] 13%|█▎        | 126/1000 [00:08<00:56, 15.43it/s] 13%|█▎        | 128/1000 [00:08<00:56, 15.33it/s] 13%|█▎        | 130/1000 [00:08<00:56, 15.32it/s] 13%|█▎        | 132/1000 [00:08<00:56, 15.39it/s] 13%|█▎        | 134/1000 [00:08<00:56, 15.35it/s] 14%|█▎        | 136/1000 [00:08<00:56, 15.40it/s] 14%|█▍        | 138/1000 [00:08<00:55, 15.41it/s] 14%|█▍        | 140/1000 [00:09<00:55, 15.42it/s] 14%|█▍        | 142/1000 [00:09<00:55, 15.37it/s] 14%|█▍        | 144/1000 [00:09<00:55, 15.36it/s] 15%|█▍        | 146/1000 [00:09<00:55, 15.40it/s] 15%|█▍        | 148/1000 [00:09<00:55, 15.40it/s] 15%|█▌        | 150/1000 [00:09<00:55, 15.33it/s] 15%|█▌        | 152/1000 [00:09<00:55, 15.34it/s] 15%|█▌        | 154/1000 [00:10<00:55, 15.35it/s] 16%|█▌        | 156/1000 [00:10<00:55, 15.30it/s] 16%|█▌        | 158/1000 [00:10<00:54, 15.33it/s] 16%|█▌        | 160/1000 [00:10<00:54, 15.35it/s] 16%|█▌        | 162/1000 [00:10<00:54, 15.33it/s] 16%|█▋        | 164/1000 [00:10<00:54, 15.27it/s] 17%|█▋        | 166/1000 [00:10<00:54, 15.31it/s] 17%|█▋        | 168/1000 [00:10<00:54, 15.33it/s] 17%|█▋        | 170/1000 [00:11<00:54, 15.37it/s] 17%|█▋        | 172/1000 [00:11<00:54, 15.33it/s] 17%|█▋        | 174/1000 [00:11<00:53, 15.37it/s] 18%|█▊        | 176/1000 [00:11<00:53, 15.38it/s] 18%|█▊        | 178/1000 [00:11<00:53, 15.40it/s] 18%|█▊        | 180/1000 [00:11<00:53, 15.35it/s] 18%|█▊        | 182/1000 [00:11<00:53, 15.31it/s] 18%|█▊        | 184/1000 [00:11<00:53, 15.34it/s] 19%|█▊        | 186/1000 [00:12<00:53, 15.31it/s] 19%|█▉        | 188/1000 [00:12<00:52, 15.36it/s] 19%|█▉        | 190/1000 [00:12<00:52, 15.39it/s] 19%|█▉        | 192/1000 [00:12<00:52, 15.42it/s] 19%|█▉        | 194/1000 [00:12<00:52, 15.37it/s] 20%|█▉        | 196/1000 [00:12<00:52, 15.37it/s] 20%|█▉        | 198/1000 [00:12<00:52, 15.39it/s] 20%|██        | 200/1000 [00:13<00:51, 15.42it/s] 20%|██        | 202/1000 [00:13<00:52, 15.34it/s] 20%|██        | 204/1000 [00:13<00:51, 15.32it/s] 21%|██        | 206/1000 [00:13<00:51, 15.38it/s] 21%|██        | 208/1000 [00:13<00:51, 15.30it/s] 21%|██        | 210/1000 [00:13<00:51, 15.35it/s] 21%|██        | 212/1000 [00:13<00:51, 15.36it/s] 21%|██▏       | 214/1000 [00:13<00:51, 15.40it/s] 22%|██▏       | 216/1000 [00:14<00:51, 15.33it/s] 22%|██▏       | 218/1000 [00:14<00:50, 15.37it/s] 22%|██▏       | 220/1000 [00:14<00:50, 15.40it/s] 22%|██▏       | 222/1000 [00:14<00:50, 15.43it/s] 22%|██▏       | 224/1000 [00:14<00:50, 15.37it/s] 23%|██▎       | 226/1000 [00:14<00:50, 15.40it/s] 23%|██▎       | 228/1000 [00:14<00:50, 15.42it/s] 23%|██▎       | 230/1000 [00:14<00:50, 15.38it/s] 23%|██▎       | 232/1000 [00:15<00:49, 15.36it/s] 23%|██▎       | 234/1000 [00:15<00:49, 15.40it/s] 24%|██▎       | 236/1000 [00:15<00:49, 15.44it/s] 24%|██▍       | 238/1000 [00:15<00:49, 15.38it/s] 24%|██▍       | 240/1000 [00:15<00:49, 15.40it/s] 24%|██▍       | 242/1000 [00:15<00:49, 15.42it/s] 24%|██▍       | 244/1000 [00:15<00:48, 15.43it/s] 25%|██▍       | 246/1000 [00:16<00:49, 15.39it/s] 25%|██▍       | 248/1000 [00:16<00:48, 15.41it/s] 25%|██▌       | 250/1000 [00:16<00:48, 15.44it/s] 25%|██▌       | 252/1000 [00:16<00:48, 15.45it/s] 25%|██▌       | 254/1000 [00:16<00:48, 15.39it/s] 26%|██▌       | 256/1000 [00:16<00:48, 15.42it/s] 26%|██▌       | 258/1000 [00:16<00:48, 15.40it/s] 26%|██▌       | 260/1000 [00:16<00:47, 15.43it/s] 26%|██▌       | 262/1000 [00:17<00:47, 15.40it/s] 26%|██▋       | 264/1000 [00:17<00:47, 15.43it/s] 27%|██▋       | 266/1000 [00:17<00:47, 15.41it/s] 27%|██▋       | 268/1000 [00:17<00:47, 15.38it/s] 27%|██▋       | 270/1000 [00:17<00:47, 15.42it/s] 27%|██▋       | 272/1000 [00:17<00:47, 15.45it/s] 27%|██▋       | 274/1000 [00:17<00:46, 15.48it/s] 28%|██▊       | 276/1000 [00:17<00:46, 15.42it/s] 28%|██▊       | 278/1000 [00:18<00:46, 15.44it/s] 28%|██▊       | 280/1000 [00:18<00:46, 15.46it/s] 28%|██▊       | 282/1000 [00:18<00:46, 15.46it/s] 28%|██▊       | 284/1000 [00:18<00:46, 15.39it/s] 29%|██▊       | 286/1000 [00:18<00:46, 15.41it/s] 29%|██▉       | 288/1000 [00:18<00:46, 15.43it/s] 29%|██▉       | 290/1000 [00:18<00:46, 15.40it/s] 29%|██▉       | 292/1000 [00:18<00:46, 15.35it/s] 29%|██▉       | 294/1000 [00:19<00:45, 15.38it/s] 30%|██▉       | 296/1000 [00:19<00:45, 15.42it/s] 30%|██▉       | 298/1000 [00:19<00:45, 15.37it/s] 30%|███       | 300/1000 [00:19<00:45, 15.40it/s] 30%|███       | 302/1000 [00:19<00:45, 15.41it/s] 30%|███       | 304/1000 [00:19<00:45, 15.42it/s] 31%|███       | 306/1000 [00:19<00:45, 15.38it/s] 31%|███       | 308/1000 [00:20<00:44, 15.40it/s] 31%|███       | 310/1000 [00:20<00:44, 15.43it/s] 31%|███       | 312/1000 [00:20<00:44, 15.43it/s] 31%|███▏      | 314/1000 [00:20<00:44, 15.37it/s] 32%|███▏      | 316/1000 [00:20<00:44, 15.41it/s] 32%|███▏      | 318/1000 [00:20<00:44, 15.43it/s] 32%|███▏      | 320/1000 [00:20<00:44, 15.45it/s] 32%|███▏      | 322/1000 [00:20<00:44, 15.33it/s] 32%|███▏      | 324/1000 [00:21<00:44, 15.36it/s] 33%|███▎      | 326/1000 [00:21<00:43, 15.33it/s] 33%|███▎      | 328/1000 [00:21<00:43, 15.32it/s] 33%|███▎      | 330/1000 [00:21<00:43, 15.37it/s] 33%|███▎      | 332/1000 [00:21<00:43, 15.40it/s] 33%|███▎      | 334/1000 [00:21<00:43, 15.43it/s] 34%|███▎      | 336/1000 [00:21<00:43, 15.39it/s] 34%|███▍      | 338/1000 [00:21<00:42, 15.42it/s] 34%|███▍      | 340/1000 [00:22<00:42, 15.43it/s] 34%|███▍      | 342/1000 [00:22<00:42, 15.45it/s] 34%|███▍      | 344/1000 [00:22<00:42, 15.40it/s] 35%|███▍      | 346/1000 [00:22<00:42, 15.43it/s] 35%|███▍      | 348/1000 [00:22<00:42, 15.45it/s] 35%|███▌      | 350/1000 [00:22<00:42, 15.27it/s] 35%|███▌      | 352/1000 [00:22<00:42, 15.33it/s] 35%|███▌      | 354/1000 [00:23<00:41, 15.40it/s] 36%|███▌      | 356/1000 [00:23<00:41, 15.44it/s] 36%|███▌      | 358/1000 [00:23<00:41, 15.41it/s] 36%|███▌      | 360/1000 [00:23<00:41, 15.44it/s] 36%|███▌      | 362/1000 [00:23<00:41, 15.47it/s] 36%|███▋      | 364/1000 [00:23<00:41, 15.48it/s] 37%|███▋      | 366/1000 [00:23<00:41, 15.35it/s] 37%|███▋      | 368/1000 [00:23<00:41, 15.37it/s] 37%|███▋      | 370/1000 [00:24<00:40, 15.41it/s] 37%|███▋      | 372/1000 [00:24<00:40, 15.44it/s] 37%|███▋      | 374/1000 [00:24<00:40, 15.38it/s] 38%|███▊      | 376/1000 [00:24<00:40, 15.42it/s] 38%|███▊      | 378/1000 [00:24<00:40, 15.45it/s] 38%|███▊      | 380/1000 [00:24<00:41, 15.03it/s] 38%|███▊      | 382/1000 [00:24<00:40, 15.16it/s] 38%|███▊      | 384/1000 [00:24<00:40, 15.27it/s] 39%|███▊      | 386/1000 [00:25<00:40, 15.34it/s] 39%|███▉      | 388/1000 [00:25<00:39, 15.40it/s] 39%|███▉      | 390/1000 [00:25<00:39, 15.44it/s] 39%|███▉      | 392/1000 [00:25<00:39, 15.45it/s] 39%|███▉      | 394/1000 [00:25<00:40, 15.02it/s] 40%|███▉      | 396/1000 [00:25<00:39, 15.17it/s] 40%|███▉      | 398/1000 [00:25<00:39, 15.28it/s] 40%|████      | 400/1000 [00:26<00:39, 15.35it/s] 40%|████      | 402/1000 [00:26<00:38, 15.39it/s] 40%|████      | 404/1000 [00:26<00:38, 15.43it/s] 41%|████      | 406/1000 [00:26<00:39, 15.02it/s] 41%|████      | 408/1000 [00:26<00:39, 15.16it/s] 41%|████      | 410/1000 [00:26<00:38, 15.26it/s] 41%|████      | 412/1000 [00:26<00:38, 15.29it/s] 41%|████▏     | 414/1000 [00:26<00:38, 15.36it/s] 42%|████▏     | 416/1000 [00:27<00:37, 15.41it/s] 42%|████▏     | 418/1000 [00:27<00:38, 14.99it/s] 42%|████▏     | 420/1000 [00:27<00:38, 15.12it/s] 42%|████▏     | 422/1000 [00:27<00:37, 15.24it/s] 42%|████▏     | 424/1000 [00:27<00:37, 15.33it/s] 43%|████▎     | 426/1000 [00:27<00:37, 15.38it/s] 43%|████▎     | 428/1000 [00:27<00:37, 15.42it/s] 43%|████▎     | 430/1000 [00:27<00:37, 15.01it/s] 43%|████▎     | 432/1000 [00:28<00:37, 15.17it/s] 43%|████▎     | 434/1000 [00:28<00:37, 15.27it/s] 44%|████▎     | 436/1000 [00:28<00:36, 15.35it/s] 44%|████▍     | 438/1000 [00:28<00:36, 15.41it/s] 44%|████▍     | 440/1000 [00:28<00:36, 15.44it/s] 44%|████▍     | 442/1000 [00:28<00:37, 15.03it/s] 44%|████▍     | 444/1000 [00:28<00:36, 15.17it/s] 45%|████▍     | 446/1000 [00:29<00:36, 15.27it/s] 45%|████▍     | 448/1000 [00:29<00:36, 15.33it/s] 45%|████▌     | 450/1000 [00:29<00:35, 15.39it/s] 45%|████▌     | 452/1000 [00:29<00:35, 15.43it/s] 45%|████▌     | 454/1000 [00:29<00:36, 15.11it/s] 46%|████▌     | 456/1000 [00:29<00:35, 15.20it/s] 46%|████▌     | 458/1000 [00:29<00:35, 15.30it/s] 46%|████▌     | 460/1000 [00:29<00:35, 15.35it/s] 46%|████▌     | 462/1000 [00:30<00:35, 15.31it/s] 46%|████▋     | 464/1000 [00:30<00:35, 15.30it/s] 47%|████▋     | 466/1000 [00:30<00:34, 15.35it/s] 47%|████▋     | 468/1000 [00:30<00:34, 15.39it/s] 47%|████▋     | 470/1000 [00:30<00:34, 15.36it/s] 47%|████▋     | 472/1000 [00:30<00:34, 15.41it/s] 47%|████▋     | 474/1000 [00:30<00:34, 15.43it/s] 48%|████▊     | 476/1000 [00:30<00:33, 15.44it/s] 48%|████▊     | 478/1000 [00:31<00:33, 15.46it/s] 48%|████▊     | 480/1000 [00:31<00:33, 15.47it/s] 48%|████▊     | 482/1000 [00:31<00:33, 15.48it/s] 48%|████▊     | 484/1000 [00:31<00:33, 15.49it/s] 49%|████▊     | 486/1000 [00:31<00:33, 15.49it/s] 49%|████▉     | 488/1000 [00:31<00:33, 15.49it/s] 49%|████▉     | 490/1000 [00:31<00:32, 15.49it/s] 49%|████▉     | 492/1000 [00:32<00:32, 15.49it/s] 49%|████▉     | 494/1000 [00:32<00:32, 15.49it/s] 50%|████▉     | 496/1000 [00:32<00:32, 15.46it/s] 50%|████▉     | 498/1000 [00:32<00:32, 15.47it/s] 50%|█████     | 500/1000 [00:32<00:32, 15.48it/s] 50%|█████     | 502/1000 [00:32<00:32, 15.49it/s] 50%|█████     | 504/1000 [00:32<00:32, 15.50it/s] 51%|█████     | 506/1000 [00:32<00:31, 15.48it/s] 51%|█████     | 508/1000 [00:33<00:31, 15.50it/s] 51%|█████     | 510/1000 [00:33<00:31, 15.50it/s] 51%|█████     | 512/1000 [00:33<00:31, 15.50it/s] 51%|█████▏    | 514/1000 [00:33<00:31, 15.52it/s] 52%|█████▏    | 516/1000 [00:33<00:31, 15.52it/s] 52%|█████▏    | 518/1000 [00:33<00:31, 15.53it/s] 52%|█████▏    | 520/1000 [00:33<00:30, 15.52it/s] 52%|█████▏    | 522/1000 [00:33<00:30, 15.44it/s] 52%|█████▏    | 524/1000 [00:34<00:30, 15.46it/s] 53%|█████▎    | 526/1000 [00:34<00:30, 15.47it/s] 53%|█████▎    | 528/1000 [00:34<00:30, 15.49it/s] 53%|█████▎    | 530/1000 [00:34<00:30, 15.49it/s] 53%|█████▎    | 532/1000 [00:34<00:30, 15.49it/s] 53%|█████▎    | 534/1000 [00:34<00:30, 15.49it/s] 54%|█████▎    | 536/1000 [00:34<00:29, 15.50it/s] 54%|█████▍    | 538/1000 [00:34<00:30, 15.05it/s] 54%|█████▍    | 540/1000 [00:35<00:30, 15.19it/s] 54%|█████▍    | 542/1000 [00:35<00:29, 15.28it/s] 54%|█████▍    | 544/1000 [00:35<00:29, 15.35it/s] 55%|█████▍    | 546/1000 [00:35<00:29, 15.39it/s] 55%|█████▍    | 548/1000 [00:35<00:29, 15.43it/s] 55%|█████▌    | 550/1000 [00:35<00:29, 15.45it/s] 55%|█████▌    | 552/1000 [00:35<00:28, 15.48it/s] 55%|█████▌    | 554/1000 [00:36<00:28, 15.50it/s] 56%|█████▌    | 556/1000 [00:36<00:28, 15.41it/s] 56%|█████▌    | 558/1000 [00:36<00:28, 15.43it/s] 56%|█████▌    | 560/1000 [00:36<00:28, 15.46it/s] 56%|█████▌    | 562/1000 [00:36<00:28, 15.47it/s] 56%|█████▋    | 564/1000 [00:36<00:28, 15.50it/s] 57%|█████▋    | 566/1000 [00:36<00:27, 15.51it/s] 57%|█████▋    | 568/1000 [00:36<00:27, 15.52it/s] 57%|█████▋    | 570/1000 [00:37<00:27, 15.52it/s] 57%|█████▋    | 572/1000 [00:37<00:27, 15.53it/s] 57%|█████▋    | 574/1000 [00:37<00:27, 15.52it/s] 58%|█████▊    | 576/1000 [00:37<00:27, 15.52it/s] 58%|█████▊    | 578/1000 [00:37<00:27, 15.51it/s] 58%|█████▊    | 580/1000 [00:37<00:27, 15.52it/s] 58%|█████▊    | 582/1000 [00:37<00:27, 15.40it/s] 58%|█████▊    | 584/1000 [00:37<00:26, 15.42it/s] 59%|█████▊    | 586/1000 [00:38<00:26, 15.37it/s] 59%|█████▉    | 588/1000 [00:38<00:26, 15.42it/s] 59%|█████▉    | 590/1000 [00:38<00:26, 15.46it/s] 59%|█████▉    | 592/1000 [00:38<00:26, 15.48it/s] 59%|█████▉    | 594/1000 [00:38<00:26, 15.50it/s] 60%|█████▉    | 596/1000 [00:38<00:26, 15.43it/s] 60%|█████▉    | 598/1000 [00:38<00:25, 15.46it/s] 60%|██████    | 600/1000 [00:38<00:25, 15.49it/s] 60%|██████    | 602/1000 [00:39<00:25, 15.50it/s] 60%|██████    | 604/1000 [00:39<00:25, 15.51it/s] 61%|██████    | 606/1000 [00:39<00:25, 15.50it/s] 61%|██████    | 608/1000 [00:39<00:25, 15.50it/s] 61%|██████    | 610/1000 [00:39<00:25, 15.35it/s] 61%|██████    | 612/1000 [00:39<00:25, 15.37it/s] 61%|██████▏   | 614/1000 [00:39<00:25, 15.40it/s] 62%|██████▏   | 616/1000 [00:40<00:24, 15.43it/s] 62%|██████▏   | 618/1000 [00:40<00:24, 15.44it/s] 62%|██████▏   | 620/1000 [00:40<00:24, 15.45it/s] 62%|██████▏   | 622/1000 [00:40<00:24, 15.47it/s] 62%|██████▏   | 624/1000 [00:40<00:24, 15.38it/s] 63%|██████▎   | 626/1000 [00:40<00:24, 15.39it/s] 63%|██████▎   | 628/1000 [00:40<00:24, 15.41it/s] 63%|██████▎   | 630/1000 [00:40<00:23, 15.42it/s] 63%|██████▎   | 632/1000 [00:41<00:23, 15.45it/s] 63%|██████▎   | 634/1000 [00:41<00:23, 15.46it/s] 64%|██████▎   | 636/1000 [00:41<00:23, 15.46it/s] 64%|██████▍   | 638/1000 [00:41<00:23, 15.35it/s] 64%|██████▍   | 640/1000 [00:41<00:23, 15.40it/s] 64%|██████▍   | 642/1000 [00:41<00:23, 15.44it/s] 64%|██████▍   | 644/1000 [00:41<00:23, 15.46it/s] 65%|██████▍   | 646/1000 [00:41<00:22, 15.49it/s] 65%|██████▍   | 648/1000 [00:42<00:22, 15.50it/s] 65%|██████▌   | 650/1000 [00:42<00:22, 15.51it/s] 65%|██████▌   | 652/1000 [00:42<00:22, 15.43it/s] 65%|██████▌   | 654/1000 [00:42<00:22, 15.46it/s] 66%|██████▌   | 656/1000 [00:42<00:22, 15.47it/s] 66%|██████▌   | 658/1000 [00:42<00:22, 15.48it/s] 66%|██████▌   | 660/1000 [00:42<00:22, 15.39it/s] 66%|██████▌   | 662/1000 [00:43<00:21, 15.43it/s] 66%|██████▋   | 664/1000 [00:43<00:21, 15.45it/s] 67%|██████▋   | 666/1000 [00:43<00:21, 15.39it/s] 67%|██████▋   | 668/1000 [00:43<00:21, 15.43it/s] 67%|██████▋   | 670/1000 [00:43<00:21, 15.44it/s] 67%|██████▋   | 672/1000 [00:43<00:21, 15.45it/s] 67%|██████▋   | 674/1000 [00:43<00:21, 15.47it/s] 68%|██████▊   | 676/1000 [00:43<00:20, 15.51it/s] 68%|██████▊   | 678/1000 [00:44<00:20, 15.45it/s] 68%|██████▊   | 680/1000 [00:44<00:20, 15.46it/s] 68%|██████▊   | 682/1000 [00:44<00:20, 15.48it/s] 68%|██████▊   | 684/1000 [00:44<00:20, 15.46it/s] 69%|██████▊   | 686/1000 [00:44<00:20, 15.43it/s] 69%|██████▉   | 688/1000 [00:44<00:20, 15.45it/s] 69%|██████▉   | 690/1000 [00:44<00:20, 15.47it/s] 69%|██████▉   | 692/1000 [00:44<00:19, 15.48it/s] 69%|██████▉   | 694/1000 [00:45<00:19, 15.48it/s] 70%|██████▉   | 696/1000 [00:45<00:19, 15.48it/s] 70%|██████▉   | 698/1000 [00:45<00:19, 15.46it/s] 70%|███████   | 700/1000 [00:45<00:19, 15.46it/s] 70%|███████   | 702/1000 [00:45<00:19, 15.47it/s] 70%|███████   | 704/1000 [00:45<00:19, 15.48it/s] 71%|███████   | 706/1000 [00:45<00:18, 15.47it/s] 71%|███████   | 708/1000 [00:45<00:18, 15.47it/s] 71%|███████   | 710/1000 [00:46<00:18, 15.47it/s] 71%|███████   | 712/1000 [00:46<00:18, 15.47it/s] 71%|███████▏  | 714/1000 [00:46<00:18, 15.45it/s] 72%|███████▏  | 716/1000 [00:46<00:18, 15.44it/s] 72%|███████▏  | 718/1000 [00:46<00:18, 15.40it/s] 72%|███████▏  | 720/1000 [00:46<00:18, 15.35it/s] 72%|███████▏  | 722/1000 [00:46<00:18, 15.38it/s] 72%|███████▏  | 724/1000 [00:47<00:17, 15.41it/s] 73%|███████▎  | 726/1000 [00:47<00:17, 15.43it/s] 73%|███████▎  | 728/1000 [00:47<00:17, 15.32it/s] 73%|███████▎  | 730/1000 [00:47<00:17, 15.34it/s] 73%|███████▎  | 732/1000 [00:47<00:17, 15.30it/s] 73%|███████▎  | 734/1000 [00:47<00:17, 15.35it/s] 74%|███████▎  | 736/1000 [00:47<00:17, 15.39it/s] 74%|███████▍  | 738/1000 [00:47<00:17, 15.41it/s] 74%|███████▍  | 740/1000 [00:48<00:16, 15.41it/s] 74%|███████▍  | 742/1000 [00:48<00:17, 14.80it/s] 74%|███████▍  | 744/1000 [00:48<00:17, 15.00it/s] 75%|███████▍  | 746/1000 [00:48<00:16, 15.07it/s] 75%|███████▍  | 748/1000 [00:48<00:16, 15.20it/s] 75%|███████▌  | 750/1000 [00:48<00:16, 15.29it/s] 75%|███████▌  | 752/1000 [00:48<00:16, 15.36it/s] 75%|███████▌  | 754/1000 [00:48<00:15, 15.39it/s] 76%|███████▌  | 756/1000 [00:49<00:15, 15.43it/s] 76%|███████▌  | 758/1000 [00:49<00:15, 15.44it/s] 76%|███████▌  | 760/1000 [00:49<00:15, 15.39it/s] 76%|███████▌  | 762/1000 [00:49<00:15, 15.42it/s] 76%|███████▋  | 764/1000 [00:49<00:15, 15.42it/s] 77%|███████▋  | 766/1000 [00:49<00:15, 15.44it/s] 77%|███████▋  | 768/1000 [00:49<00:15, 15.45it/s] 77%|███████▋  | 770/1000 [00:50<00:14, 15.45it/s] 77%|███████▋  | 772/1000 [00:50<00:14, 15.45it/s] 77%|███████▋  | 774/1000 [00:50<00:14, 15.21it/s] 78%|███████▊  | 776/1000 [00:50<00:14, 15.28it/s] 78%|███████▊  | 778/1000 [00:50<00:14, 15.30it/s] 78%|███████▊  | 780/1000 [00:50<00:14, 15.28it/s] 78%|███████▊  | 782/1000 [00:50<00:14, 15.27it/s] 78%|███████▊  | 784/1000 [00:50<00:14, 15.27it/s] 79%|███████▊  | 786/1000 [00:51<00:14, 15.27it/s] 79%|███████▉  | 788/1000 [00:51<00:13, 15.20it/s] 79%|███████▉  | 790/1000 [00:51<00:13, 15.22it/s] 79%|███████▉  | 792/1000 [00:51<00:13, 15.22it/s] 79%|███████▉  | 794/1000 [00:51<00:13, 15.23it/s] 80%|███████▉  | 796/1000 [00:51<00:13, 15.24it/s] 80%|███████▉  | 798/1000 [00:51<00:13, 15.25it/s] 80%|████████  | 800/1000 [00:52<00:13, 15.10it/s] 80%|████████  | 802/1000 [00:52<00:13, 15.14it/s] 80%|████████  | 804/1000 [00:52<00:12, 15.18it/s] 81%|████████  | 806/1000 [00:52<00:12, 15.23it/s] 81%|████████  | 808/1000 [00:52<00:12, 15.25it/s] 81%|████████  | 810/1000 [00:52<00:12, 15.25it/s] 81%|████████  | 812/1000 [00:52<00:12, 15.26it/s] 81%|████████▏ | 814/1000 [00:52<00:12, 15.20it/s] 82%|████████▏ | 816/1000 [00:53<00:12, 15.22it/s] 82%|████████▏ | 818/1000 [00:53<00:11, 15.23it/s] 82%|████████▏ | 820/1000 [00:53<00:11, 15.24it/s] 82%|████████▏ | 822/1000 [00:53<00:11, 15.25it/s] 82%|████████▏ | 824/1000 [00:53<00:11, 15.26it/s] 83%|████████▎ | 826/1000 [00:53<00:11, 15.28it/s] 83%|████████▎ | 828/1000 [00:53<00:11, 15.23it/s] 83%|████████▎ | 830/1000 [00:53<00:11, 15.24it/s] 83%|████████▎ | 832/1000 [00:54<00:11, 15.24it/s] 83%|████████▎ | 834/1000 [00:54<00:11, 14.51it/s] 84%|████████▎ | 836/1000 [00:54<00:11, 14.80it/s] 84%|████████▍ | 838/1000 [00:54<00:10, 15.00it/s] 84%|████████▍ | 840/1000 [00:54<00:10, 15.06it/s] 84%|████████▍ | 842/1000 [00:54<00:10, 15.17it/s] 84%|████████▍ | 844/1000 [00:54<00:10, 15.27it/s] 85%|████████▍ | 846/1000 [00:55<00:10, 15.33it/s] 85%|████████▍ | 848/1000 [00:55<00:09, 15.35it/s] 85%|████████▌ | 850/1000 [00:55<00:09, 15.32it/s] 85%|████████▌ | 852/1000 [00:55<00:09, 15.30it/s] 85%|████████▌ | 854/1000 [00:55<00:09, 15.20it/s] 86%|████████▌ | 856/1000 [00:55<00:09, 15.18it/s] 86%|████████▌ | 858/1000 [00:55<00:09, 15.23it/s] 86%|████████▌ | 860/1000 [00:55<00:09, 15.26it/s] 86%|████████▌ | 862/1000 [00:56<00:09, 15.28it/s] 86%|████████▋ | 864/1000 [00:56<00:08, 15.30it/s] 87%|████████▋ | 866/1000 [00:56<00:08, 15.30it/s] 87%|████████▋ | 868/1000 [00:56<00:08, 15.19it/s] 87%|████████▋ | 870/1000 [00:56<00:08, 15.22it/s] 87%|████████▋ | 872/1000 [00:56<00:08, 15.25it/s] 87%|████████▋ | 874/1000 [00:56<00:08, 15.27it/s] 88%|████████▊ | 876/1000 [00:56<00:08, 15.29it/s] 88%|████████▊ | 878/1000 [00:57<00:07, 15.30it/s] 88%|████████▊ | 880/1000 [00:57<00:07, 15.31it/s] 88%|████████▊ | 882/1000 [00:57<00:07, 15.24it/s] 88%|████████▊ | 884/1000 [00:57<00:07, 15.26it/s] 89%|████████▊ | 886/1000 [00:57<00:07, 15.28it/s] 89%|████████▉ | 888/1000 [00:57<00:07, 15.28it/s] 89%|████████▉ | 890/1000 [00:57<00:07, 15.30it/s] 89%|████████▉ | 892/1000 [00:58<00:07, 15.30it/s] 89%|████████▉ | 894/1000 [00:58<00:06, 15.31it/s] 90%|████████▉ | 896/1000 [00:58<00:06, 15.25it/s] 90%|████████▉ | 898/1000 [00:58<00:06, 15.27it/s] 90%|█████████ | 900/1000 [00:58<00:06, 15.29it/s] 90%|█████████ | 902/1000 [00:58<00:06, 15.30it/s] 90%|█████████ | 904/1000 [00:58<00:06, 15.31it/s] 91%|█████████ | 906/1000 [00:58<00:06, 15.32it/s] 91%|█████████ | 908/1000 [00:59<00:06, 15.27it/s] 91%|█████████ | 910/1000 [00:59<00:05, 15.29it/s] 91%|█████████ | 912/1000 [00:59<00:05, 15.32it/s] 91%|█████████▏| 914/1000 [00:59<00:05, 15.33it/s] 92%|█████████▏| 916/1000 [00:59<00:05, 15.34it/s] 92%|█████████▏| 918/1000 [00:59<00:05, 15.34it/s] 92%|█████████▏| 920/1000 [00:59<00:05, 15.35it/s] 92%|█████████▏| 922/1000 [01:00<00:05, 15.29it/s] 92%|█████████▏| 924/1000 [01:00<00:04, 15.30it/s] 93%|█████████▎| 926/1000 [01:00<00:04, 15.30it/s] 93%|█████████▎| 928/1000 [01:00<00:04, 15.32it/s] 93%|█████████▎| 930/1000 [01:00<00:04, 15.33it/s] 93%|█████████▎| 932/1000 [01:00<00:04, 15.33it/s] 93%|█████████▎| 934/1000 [01:00<00:04, 15.34it/s] 94%|█████████▎| 936/1000 [01:00<00:04, 15.27it/s] 94%|█████████▍| 938/1000 [01:01<00:04, 14.82it/s] 94%|█████████▍| 940/1000 [01:01<00:03, 15.03it/s] 94%|█████████▍| 942/1000 [01:01<00:03, 15.15it/s] 94%|█████████▍| 944/1000 [01:01<00:03, 15.26it/s] 95%|█████████▍| 946/1000 [01:01<00:03, 15.33it/s] 95%|█████████▍| 948/1000 [01:01<00:03, 15.37it/s] 95%|█████████▌| 950/1000 [01:01<00:03, 15.29it/s] 95%|█████████▌| 952/1000 [01:01<00:03, 15.31it/s] 95%|█████████▌| 954/1000 [01:02<00:03, 15.31it/s] 96%|█████████▌| 956/1000 [01:02<00:02, 15.32it/s] 96%|█████████▌| 958/1000 [01:02<00:02, 15.33it/s] 96%|█████████▌| 960/1000 [01:02<00:02, 15.34it/s] 96%|█████████▌| 962/1000 [01:02<00:02, 15.28it/s] 96%|█████████▋| 964/1000 [01:02<00:02, 15.31it/s] 97%|█████████▋| 966/1000 [01:02<00:02, 15.32it/s] 97%|█████████▋| 968/1000 [01:03<00:02, 15.33it/s] 97%|█████████▋| 970/1000 [01:03<00:01, 15.33it/s] 97%|█████████▋| 972/1000 [01:03<00:01, 15.33it/s] 97%|█████████▋| 974/1000 [01:03<00:01, 15.32it/s] 98%|█████████▊| 976/1000 [01:03<00:01, 15.25it/s] 98%|█████████▊| 978/1000 [01:03<00:01, 15.26it/s] 98%|█████████▊| 980/1000 [01:03<00:01, 15.28it/s] 98%|█████████▊| 982/1000 [01:03<00:01, 15.28it/s] 98%|█████████▊| 984/1000 [01:04<00:01, 15.29it/s] 99%|█████████▊| 986/1000 [01:04<00:00, 15.29it/s] 99%|█████████▉| 988/1000 [01:04<00:00, 15.29it/s] 99%|█████████▉| 990/1000 [01:04<00:00, 15.23it/s] 99%|█████████▉| 992/1000 [01:04<00:00, 15.26it/s] 99%|█████████▉| 994/1000 [01:04<00:00, 15.28it/s]100%|█████████▉| 996/1000 [01:04<00:00, 15.30it/s]100%|█████████▉| 998/1000 [01:04<00:00, 15.31it/s]100%|██████████| 1000/1000 [01:05<00:00, 15.34it/s]100%|██████████| 1000/1000 [01:05<00:00, 15.36it/s]
+HTTP Error 429 thrown while requesting HEAD https://huggingface.co/datasets/sapientinc/sudoku-extreme/resolve/main/test.csv
+Retrying in 1s [Retry 1/5].
+HTTP Error 429 thrown while requesting HEAD https://huggingface.co/datasets/sapientinc/sudoku-extreme/resolve/main/test.csv
+Retrying in 2s [Retry 2/5].
+HTTP Error 429 thrown while requesting HEAD https://huggingface.co/datasets/sapientinc/sudoku-extreme/resolve/main/test.csv
+Retrying in 4s [Retry 3/5].
+HTTP Error 429 thrown while requesting HEAD https://huggingface.co/datasets/sapientinc/sudoku-extreme/resolve/main/test.csv
+Retrying in 8s [Retry 4/5].
+HTTP Error 429 thrown while requesting HEAD https://huggingface.co/datasets/sapientinc/sudoku-extreme/resolve/main/test.csv
+Retrying in 8s [Retry 5/5].
+HTTP Error 429 thrown while requesting HEAD https://huggingface.co/datasets/sapientinc/sudoku-extreme/resolve/main/test.csv
+Traceback (most recent call last):
+  File "/opt/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1546, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/opt/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1463, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/opt/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 286, in _request_wrapper
+    response = _request_wrapper(
+  File "/opt/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
+    response = http_backoff(method=method, url=url, **params, retry_on_exceptions=(), retry_on_status_codes=(429,))
+  File "/opt/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 317, in http_backoff
+    response.raise_for_status()  # Will raise uncaught exception
+  File "/opt/venv/lib/python3.10/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/datasets/sapientinc/sudoku-extreme/resolve/main/test.csv
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/HRM/dataset/build_sudoku_dataset.py", line 169, in <module>
+    cli()
+  File "/opt/venv/lib/python3.10/site-packages/argdantic/core.py", line 150, in __call__
+    return args.__func__(args)
+  File "/opt/venv/lib/python3.10/site-packages/argdantic/core.py", line 80, in __call__
+    return self.callback(validated)
+  File "/opt/HRM/dataset/build_sudoku_dataset.py", line 165, in preprocess_data
+    convert_subset("test", config)
+  File "/opt/HRM/dataset/build_sudoku_dataset.py", line 65, in convert_subset
+    with open(hf_hub_download(config.source_repo, f"{set_name}.csv", repo_type="dataset"), newline="") as csvfile:
+  File "/opt/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1010, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/opt/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1117, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/opt/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1661, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
